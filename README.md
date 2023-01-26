@@ -8,7 +8,7 @@
 
 #### Marque esse projeto com uma estrela ⭐
 #### Siga as instruções das aulas e conteúdos 📚
-#### Visite a página do Challenge [Clicando aqui!](https://www.alura.com.br/challenges/oracle-one/sprint01-construa-decodificador-texto-com-javascript) 📃
+#### Visite a página do Challenge [Clicando aqui!](https://www.alura.com.br/challenges/challenge-one-logica) 📃
 ---
 
 ## Como baixar o repositório?
