@@ -24,7 +24,7 @@ Para realizar o download do arquivo: Clique no botão verde com nome "Code" na p
 ### Vídeos da Resolução Challenge ONE Decodificador de Texto
 
  - Parte I: [HTML e CSS](https://www.youtube.com/watch?v=04QvWw4aHlk)
- - Parte II: [Lógica com Javascript](https://www.youtube.com/watch?v=DVjp-TJihAM)
+ - Parte II: [Lógica com Javascript](https://www.youtube.com/watch?v=e3PasHJMIF8)
 
 Durante a execução da nossa live, utilizamos alguns métodos de JavaScript e para facilitar suas buscas e processos de estudo, deixaremos alguns deles listados abaixo com sua documentação oficial.
 
