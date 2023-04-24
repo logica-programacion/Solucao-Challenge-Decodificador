@@ -1,91 +1,242 @@
 * {
-    background: #E5E5E5;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 32px;
     line-height: 150%;
 }
 
-.logo {
-    margin-left: 10px;
-    padding-top: 10px;
-    width:2%;
+body {
+    background-color: #F3F5FC;
+    margin: 0;
+    padding: 40px;
 }
 
-main {
+.principal {
     display: flex;
-    margin-bottom: 50px;
-    margin-left: 80px;
+    height: 70vh;
+    justify-content: space-between;
+    margin: 5vh auto;
+    width: 90vw;
 }
-
-.text-area {
-    border: none;
-    color: #0A3871;
-    margin-top: 90px;
-    text-transform: lowercase;
-}
-::placeholder { color: #0A3871; }
-  .text-area:focus {
-      outline: none;
-    }
 
 .mensagem {
-    background: white;
-    background-image: url("imagens/boneco.png");
-    background-repeat: no-repeat;
-    border: none;
-    border-radius: 24px;
-    color: #0A3871;
-    margin-left: 98px;
-    margin-top: 20px;
-    padding-left: 20px;
-    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60vw;
 }
-.mensagem:focus {
+
+.mensagem__texto {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: #0A3871;
+    font-size: 32px;
+    height: 80%;
+    margin-bottom: 16px;
+    max-height: 80%;
+    max-width: 100%;
+    padding: 16px;
+    resize: none;
+}
+
+.mensagem__texto:focus {
     outline: none;
 }
 
-.botoes {
+.mensagem__texto::placeholder {
+    color: #0A3871;
+}
+
+.mensagem__aviso {
+    align-items: center;
     display: flex;
-    margin-top: 18px;
+    margin-bottom: 16px;
 }
 
-.btn-desencriptar {
-    background: #D8DFE8;
-    border: 1px solid #0A3871;
+.mensagem__aviso img {
+    margin-right: 8px;
+}
+
+.mensagem__botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mensagem__botoes button {   
     border-radius: 24px;
-    color: #0A3871;
     cursor: pointer;
-    height: 67px;
-    margin-left: 30px;
-    width: 328px;
+    font-size: 16px;
+    padding: 24px;
+    width: 48%;
 }
 
-.btn-encriptar {
+.botao__btn-encriptar {
     background-color: #0A3871;
-    border: 1px solid #0A3871;
-    border-radius: 24px;
-    color: white;
-    cursor: pointer;
-    height: 67px;
-    width: 328px;
+    border: none;
+    color: #F5F5F5;
 }
 
-.btn-copiar {
+.botao__btn-desencriptar {
+    background-color: transparent;
     border: 1px solid #0A3871;
+    color: #0A3871;
+}
+
+.resultado {
+    background-color: #FFFFFF;
+    border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px #00000008;;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+    padding: 32px;
+    text-align: center;
+    width: 25vw;
+}
+
+.resultado h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 16px 0;
+}
+
+.resultado span {
+    font-size: 16px;
+}
+
+.resultado__texto {
+    color: #333333;
+    font-size: 24px;
+    height: 90%;
+    line-height: 150%;
+    margin-bottom: 16px;
+    overflow: auto;
+}
+
+.resultado__btn-copiar {
+    background-color: transparent;
     border-radius: 24px;
+    border: 1px solid #0A3871;
     color: #0A3871;
     cursor: pointer;
-    height: 67px;
-    margin-left: 108px;
-    margin-top: 402px;
-    position: absolute;
-    width: 336px;
+    font-size: 16px;
+    padding: 24px;
+    transition: .5s;
+    width: 100%;
 }
 
-.informacao {
-    color: #495057;
-    font-size:18px;
+.botao:hover {
+    background-color: #E5E5E5;
+    border: 1px solid #0A3871;
+    color: #0A3871;
+    transition: .5s;
 }
 
+/* SCROLLBAR */
+
+/* Para alterar o estilo da scrollbar da página utilizamos o webkit, como apresentado abaixo */
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+  ::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+    border-radius: 5px;
+}
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333333;
+}
+
+/* RESPONSIVIDADE PARA TABLET */
+
+/* Quando fazemos a responsividade de alguma aplicação, não existe a necessidade de refazer todo o código CSS, 
+apenas o que precisamos que seja alterado. */
+
+/* Abaixo vemos quais são os componentes que precisam de alteração após a consulta ao Figma do projeto. */
+
+/* Antes, devemos definir o tipo de mídia que estamos utilizando e qual sera o breaking point, ou ponto de quebra, que nada mais é o 
+valor à partir do qual o design deverá mudar. */
+
+/*   tipo de mídia          ponto de quebra */
+/*        |                     |           */
+@media screen and (max-width: 768px) {
+
+    /* Ao observar o figma, vemos que, ao invés de termos a seção de resultado ao lado da mensagem, teremos uma abaixo da outra, 
+    então precisamos alterar a direção do flexbox para "column" ao invés de "row", que é o padrão. */
+
+    .principal {
+        flex-direction: column; /* alterando a direção para coluna */
+        height: auto;
+    }
+
+    /* Anteriormente, nós definimos uma largura para o componente mensagem que não fosse a tela inteira, pois ele deveria dividir a largura
+    da tela com o componente resultado, agora, devemos redefinir essa largura para que ocupe toda a largura disponível na tela, já que o componente
+    resultado estará abaixo dele, e não ao lado. */
+    
+    .mensagem {
+        margin-bottom: 16px;
+        width: 100%; /* alterando a largura do componente */
+    }
+
+    .mensagem__texto {
+        height: auto;
+        min-height: 200px;
+    }
+
+    /* Da mesma maneira que fizemos com o componente mensagem, devemos alterar a largura do componente resultado pelo mesmo motivo. */
+
+    .resultado {
+        height: auto;
+        margin-bottom: 16px;
+        width: 100%; /* alterando a largura do componente */
+    }
+
+    /* Voltando para o figma, vemos que, para displays menores, como tablets e celulares, a imagem na seção de resultados já não aparece mais,
+    então devemos definir seu display como "none" para que ela não apareça nesses tipos de tela. */
+
+    .resultado img {
+        display: none; /* retirando a imagem da tela */
+    }
+}
+
+/* RESPONSIVIDADE PARA CELULAR */
+
+/* O primeiro ponto importante para citarmos aqui é que todas as alterações realizadas para o modelo de tablet são válidas para o de celular também.
+Isso acontece porque definimos que queremos que todos os estilos acima se apliquem para mídias que tenham 768px ou menos de largura, o que inclui 
+celulares, que podem ter entre 360px e 560px de largura. */
+
+/* Os breaking points, ou pontos de quebra, que utilizamos aqui são os mais comuns a serem utilizados, mas é possível utilizar qualquer medida
+como ponto de quebra de uma media query. */
+
+/*   tipo de mídia          ponto de quebra */
+/*        |                     |           */
+@media screen and (max-width: 460px) {
+
+    /* A grande mudança de estilo que vemos para essa largura de tela é a disposição dos botões. Ao invés de estarem um ao lado do outro, eles agora
+    se encontram um abaixo do outro, então devemos alterar mais uma vez a direção do flex do componente que os contém. */
+
+    .mensagem__botoes {
+        flex-direction: column; /* alterando a direção para coluna */
+    }
+
+    /* Além disso, precisamos também definir uma nova largura para cada um desses botões, visto que anteriormente eles dividiam a largura do 
+    componente pai entre eles, porém agora cada botão vai ocupar 100% da largula disponível. */
+
+    .mensagem__botoes button {   
+        width: 100%;
+    }
+    
+    .botao__btn-encriptar {
+        margin-bottom: 16px;
+    }
+}
 

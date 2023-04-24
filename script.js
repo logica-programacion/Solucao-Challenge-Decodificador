@@ -1,5 +1,5 @@
-const textArea = document.querySelector(".text-area");
-const mensagem = document.querySelector(".mensagem");
+const textArea = document.querySelector(".mensagem__texto");
+const resultado = document.querySelector(".resultado");
 
 // As "chaves" de criptografia que utilizaremos são:
 // `A letra "e" é convertida para "enter"`
@@ -10,7 +10,10 @@ const mensagem = document.querySelector(".mensagem");
 
 function btnEncriptar() {
     const textoEncriptado = encriptar(textArea.value);
-    mensagem.value = textoEncriptado;
+    resultado.innerHTML = `
+        <div class="resultado__texto">${textoEncriptado}</div>
+        <button class="botao resultado__btn-copiar" onclick="copiar()">Copiar</button>
+    `;
     textArea.value = "";
 }
 
@@ -32,7 +35,10 @@ function encriptar(stringEncriptada) {
 
 function btnDesencriptar() {
     const textoDesencriptado = desencriptar(textArea.value);
-    mensagem.value = textoDesencriptado;
+    resultado.innerHTML = `
+        <div class="resultado__texto">${textoDesencriptado}</div>
+        <button class="botao resultado__btn-copiar" onclick="copiar()">Copiar</button>
+    `;
     textArea.value = "";
 }
 
@@ -49,4 +55,9 @@ function desencriptar(stringDesencriptada) {
     }
 
     return stringDesencriptada;
+}
+
+function copiar() {
+    const texto = document.querySelector(".resultado__texto").innerHTML
+    navigator.clipboard.writeText(texto)
 }

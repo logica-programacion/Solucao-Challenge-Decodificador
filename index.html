@@ -15,23 +15,23 @@
         <img src="./imagens/logoAlura.png" alt="Logo da Alura">
     </header>
     
-    <main>
-        <section>
-            <textarea class="text-area"  cols="41" rows="4" placeholder="Digite seu texto"></textarea>
-    
-            <div>
-                <h6 class="informacao">Apenas letras minúsculas e sem acento.</h6>
+    <main class="principal">
+        <div class="mensagem">
+            <textarea class="mensagem__texto" name="texto" id="texto" cols="30" rows="5" placeholder="Digite seu texto"></textarea>
+            <span class="mensagem__aviso">
+                <img src="./imagens/icone-exclamacao.png" alt="atenção">
+                Somente letras minúsculas e sem acentos.
+            </span>
+            <div class="mensagem__botoes">
+                <button class="botao botao__btn-encriptar" onclick="btnEncriptar()">Criptografar</button>
+                <button class="botao botao__btn-desencriptar" onclick="btnDesencriptar()">Descriptografar</button>
             </div>
-            <div class="botoes">
-                <button class="btn-encriptar" onclick="btnEncriptar()">Criptografar</button>
-                <button class="btn-desencriptar" onclick="btnDesencriptar()">Descriptografar</button>
-            </div>
-        </section>
-        
-        <section>
-            <textarea class="mensagem"  cols="20" rows="10"></textarea>
-            <button class="btn-copiar">Copiar</button>
-        </section>
+        </div>
+        <div class="resultado">
+            <img src="./imagens/boneco.png" alt="Nenhuma mensagem">
+            <h2>Nenhuma mensagem encontrada</h2>
+            <span>Digite um texto que você deseja criptografar ou descriptografar.</span>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
